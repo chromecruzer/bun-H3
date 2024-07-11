@@ -7,7 +7,7 @@ app.use(defineEventHandler(() => "Hello world!"));
 import { toWebHandler } from "h3";
 
 const server = Bun.serve({
-  port: 3001,
+  port: 3001 || process.env.PORT,
   fetch: toWebHandler(app),
 });
 
