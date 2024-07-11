@@ -1,0 +1,15 @@
+html
+  head
+    title Master Control Form
+  body
+    h1 Master Control Form
+    form(action="/send-command", method="POST")
+      label(for="command") Enter Command:
+      input(type="text", id="command", name="command", required)
+      button(type="submit") Execute Command
+    if command
+      h2 Command Sent: #{command}
+    if response
+      h2 Response: #{response}
+    if error
+      h2 Error: #{error}
